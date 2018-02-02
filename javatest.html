@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>Red Letter Day</title>
+</head>
+<body>
+
+  <h1>RED Letter Days</h1>
+
+  <br><hr><br>
+
+  <h2>Guess the correct letter. You have 10 chances!</h2>
+
+  <br><hr><br>
+
+
+  <script type="text/javascript">
+
+  //Generate a random letter.
+  var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+  var wins = 0;
+  var losses = 0;
+  var guesses: 0;
+
+  document.onkeyup = function(event) {
+
+  }
+
+
+
+
+    var userGuess = event.key;
+
+    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+    if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c")) {
+
+      if ((userGuess === "a") && (computerGuess === "a")) {
+          wins++;
+        } else if ((userGuess === "a") && (computerGuess !== "a")) {
+          losses++;
+        } else if ((userGuess === "b") && (computerGuess === "b")) {
+          wins++;
+        } else if ((userGuess === "b") && (computerGuess !== "b")) {
+          losses++;
+        } else if ((userGuess === "c") && (computerGuess === "c")) {
+          wins++;
+        } else if ((userGuess === "c") && (computerGuess !== "c")) {
+          losses++;
+        }
+
+        var html =
+          "<p>You chose: " + userGuess + "</p>" +
+          "<p>The computer chose: " + computerGuess + "</p>" +
+          "<p>wins: " + wins + "</p>" +
+          "<p>losses: " + losses + "</p>";
+
+        
+      }
+    };
+
+
+
+
+ //Give the player 10 chances to guess what the letter is.
+
+  //Check to see if the letter is correct.
+
+  //If the letter is right add one point to the win column and reset the game.
+
+  //If the letter is wrong, allow the player to guess again.
+
+  //If the player doesn't guess the correct letter within 10 attempts, add one point to the loss column and reset the game.
+
+  </script>
+  </body>
+  </html>
+
+
